@@ -1,17 +1,9 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sat Nov 17 00:03:44 2018
-
-@author: Dylan
-"""
-
 import pygame
-from random import randint
 
 from piece import Piece
 from game_board import GameBoard
 
-class TetrisMain():
+class TetrisMain:
     """Main class of Tetris game. Contains all pygame display and event 
     handling while connecting both of the classes Piece and GameBoard
     together.
@@ -143,7 +135,7 @@ class TetrisMain():
         """Handles moving the self.live_piece down, left, and right.
         """
         
-        if self.x_change != 0 and self.x_tick%2 == 0:
+        if self.x_change != 0 and self.x_tick % 2 == 0:
             self.live_piece.move_side(self.x_change, self.game_board.board)
 
         for i in range(self.fall_count):
@@ -181,7 +173,7 @@ class TetrisMain():
         """
         
         full_rows = self.game_board.get_full_rows()
-        if full_rows is not None:
+        if full_rows != None:
             # Award points - the more cleared by 1 piece, the more points
             if len(full_rows) == 1:
                 self.score += 40
@@ -195,8 +187,7 @@ class TetrisMain():
                     piece.drop_dead_down(row)
             
             # Filter out pieces that are no longer visible on the board
-            self.dead_pieces = [piece for piece in self.dead_pieces 
-                                if piece.isVisible]
+            self.dead_pieces = [piece for piece in self.dead_pieces if piece.isVisible]
             
             # Refresh board
             self.game_board.refresh_board(self.dead_pieces)

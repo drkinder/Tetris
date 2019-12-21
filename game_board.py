@@ -32,13 +32,13 @@ class GameBoard:
         self.next_piece_idx = 0
         self.rand_pieces = random.sample([i for i in range(1, 8)], 7)
 
-        self.board = []
         self.generate_board()
         
     def generate_board(self):
         """Builds the empty 2D game board. Empty cells are represented by 0 and populated cells by 1. The size of the
         board is sized dynamically based on the values of self.block_size, self.display_width, and self.display_height.
         """
+        self.board = []
         for y in range(int(self.display_height/self.block_size)):
             self.board.append([])
             for x in range(int(self.display_width/self.block_size)):
