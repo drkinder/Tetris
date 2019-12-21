@@ -26,7 +26,7 @@ class TetrisMain():
         
         pygame.init()
         pygame.display.set_caption("Tetris")
-        game_icon = pygame.image.load("game_icon.png")
+        game_icon = pygame.image.load("static/game_icon.png")
         pygame.display.set_icon(game_icon)
         
         self.gameDisplay = pygame.display.set_mode(self.master_display_size)
@@ -236,7 +236,7 @@ class TetrisMain():
         """Draws a piece on the game screen.
         """
         
-        border_img = pygame.image.load("block_border.png")
+        border_img = pygame.image.load("static/block_border.png")
         for y_idx, row in enumerate(piece.coordinates):
             for x_idx, coords in enumerate(row):
     
@@ -249,14 +249,14 @@ class TetrisMain():
         """Draws border around the Tetris game and Pause/Play button.
         """
         
-        interface_img = pygame.image.load("screen_hallow.png")
+        interface_img = pygame.image.load("static/screen_hallow.png")
         self.gameDisplay.blit(interface_img, (0, 0))
         
         # Blit the play/pause icon
         if self.isPaused:
-            pause_img = pygame.image.load("play_icon.png")
+            pause_img = pygame.image.load("static/play_icon.png")
         else:
-            pause_img = pygame.image.load("pause_icon.png")
+            pause_img = pygame.image.load("static/pause_icon.png")
             
         self.gameDisplay.blit(pause_img, (230, 420))            
                 
@@ -271,7 +271,7 @@ class TetrisMain():
         """Draws Game Over Screen with buttons to play again or exit game.
         """
         
-        game_over_img = pygame.image.load("game_over_screen.png")
+        game_over_img = pygame.image.load("static/game_over_screen.png")
         # game_over_screen dimensions 250x150px
         x_pos = self.master_display_size[0]/2 - 125
         y_pos = 60
