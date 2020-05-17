@@ -1,5 +1,5 @@
 # Tetris
-My Python Tetris clone using Pygame.
+My Python Tetris game using Pygame.
 
 ![alt text](readme_imgs/gameplay.gif)
 ## Setup
